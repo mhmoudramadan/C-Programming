@@ -23,7 +23,9 @@ void bubblesort(int arr[],int Size)
 			}
 		}
 		if(Swapped == false)
+		{
 			break;
+		}
 	}
 }
 /*print array after sorting*/
