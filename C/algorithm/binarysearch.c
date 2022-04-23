@@ -2,7 +2,45 @@
 #include<stdlib.h>
 #include"LIB/LSTD_TYPES.h"
 
-uint16 BinarySearch(uint16 arr[],uint16 Size,uint16 search);
+
+int binarysearch(int arr[],int size ,int search)
+{
+	int start=0,End=size-1,middle;
+	while(start<=End)
+	{
+		middle=(start+End)/2;
+		if(arr[middle]==search)
+		{
+			return middle;
+		}
+		else if(arr[middle]<search)
+		{
+			start=middle+1;
+		}
+		else
+		{
+		End=middle-1;	
+		}
+	}
+	return -1;
+}
+int main()
+{
+	int arr[]={10,15,20,30,35,40};
+	int size ,search=35,Index;
+	size=sizeof(arr)/sizeof(arr[0]);
+	Index=binarysearch(arr,size-1,search);
+	if(Index==-1)
+	{
+		printf("Not found");
+	}
+	else
+	{
+		printf("%d found in Index %d",search,Index);
+	}
+	return 0;
+}
+/*uint16 BinarySearch(uint16 arr[],uint16 Size,uint16 search);
 int main()
 {
 	uint16 Size ,Index,Val;
@@ -29,7 +67,7 @@ int main()
 		printf(" %d value found in Index %d \n",Val,Index);
 	}
 	return 0;
-}
+}*/
 
 uint16 BinarySearch(uint16 arr[],uint16 Size,uint16 search)
 {
