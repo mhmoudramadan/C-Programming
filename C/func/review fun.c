@@ -19,9 +19,24 @@
 	  *x=*y;
 	  *y=temp;
   }*/
+  int GetFac(int a)
+  {
+	  if(a==0)
+	  {
+		  return 1;
+	  }
+	  else
+	  {
+		  return a*GetFac(a-1);
+	  }
+  }
   int main()
   {
-	  
+	int a;
+	printf("Enter Number to get factorial");
+	scanf("%d",&a);
+	int result1=GetFac(a);
+	printf("\n%d",result1);
   }
  /* {
 	 int l=90,k=50;
